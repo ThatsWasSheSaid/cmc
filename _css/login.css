@@ -1,0 +1,78 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+.wrapper {
+    position: relative;
+    width: calc(100% - 60px);
+    height: calc(100vh - 60px);
+    background-color: #ececec;
+    text-align: center;
+    padding: 30px;
+}
+.login-wrapper {
+    display: inline-block;
+}
+.logo{
+    width: 325px;
+}
+.login {
+    width: 350px;
+    margin-top: 30px;
+    background: #fff;
+    padding: 30px 15px;
+    border-radius: 25px;
+}
+.login input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 10px 10%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #757575;
+    color: #757575;
+}
+.login button {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    width: 80%;
+    margin: 15px 0px;
+    border-radius: 25px;
+}
+.login button:hover {
+    background-color: #ffa000;
+    cursor: pointer;
+    
+    transition: all 0.5s;
+}
+.esqueciASenha{
+    color: #757575;
+    text-decoration: none;
+}
+.esqueciASenha:hover{
+    color: #ffc107;
+    transition: all 0.5s;
+}
+.ou{
+    color: #757575;
+    margin: 30px;
+}
+.cadastro button {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    width: 80%;
+    border-radius: 25px;
+}
+.cadastro button:hover {
+    background-color: #ffa000;
+    cursor: pointer;
+    
+    transition: all 0.5s;
+}
+.error, .msg{
+    font-size: 14px;
+    color: red;
+}

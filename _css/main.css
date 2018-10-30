@@ -1,0 +1,28 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #ececec;
+    text-align: center;
+}
+.nav-bar{
+    padding: 5px;
+    background-color: #fff;
+}
+.nav-bar .logo{
+    width: 150px;
+}
+.nav-bar-buttons{
+    float: right;
+    padding: 8px 15px;
+}
+svg.btn-sair {
+    fill: #757575;
+}
+svg.btn-sair:hover{
+    fill: #ffc107;
+    transition: all 0.5s;
+}
