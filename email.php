@@ -1,8 +1,10 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
     require_once("plugins/PHPMailer-master/src/PHPMailer.php");
     require_once("plugins/PHPMailer-master/src/Exception.php");
     require_once("plugins/PHPMailer-master/src/SMTP.php");
     set_time_limit(3600);
+    
 
 
 
@@ -14,7 +16,7 @@
 //caso o servidor necessite de usuario/senha
     $autenticar = true;
     $usuario = 'contato@avannt.net';
-    $senha = 'Aezakmi2@';
+    $senha = 'Aezakmi3#';
 //configurações do Email
     $rementente = 'no-reply@avannt.net';
     $reply = 'no-reply@avannt.net';
@@ -57,20 +59,20 @@ if(isset($_GET['email'])){
         $tituloEmail = 'Cadastro realizado com sucesso!';
         $textoEmail = '<h2>Parabens! seu cadastro foi realizado com sucesso!</h2>';
 
-        $mail->Body    = "<html>
+        $mail->Body = "<html>
         <!-- CORPO -->
         <body style='height: 100%;background-color: rgb(247, 247, 247);'>
             <!-- CONTEUDO INTERNO -->
             <div class='content' style='background-color:white;width: 90%;height: 97%;border-color: rgb(189, 189, 189);border-width: 1px;border-style:  solid;margin: 4%;text-align:center;'>
                 <!-- LOGO -->
-                <img src='{$dominioDoSite}/_assets/img/logo.png' style='margin: 7%;width: 32%;'>
+                <img src='{$dominioDoSite}/_assets/img/logo.png' style='padding: 5%;width: 32%;'>
                 <!-- TITULO -->
-                <div style='background-color: #023326;height: 150px;'>
+                <div style='background-color: #ffc107;height: 150px;'>
                     <!-- H1 TITULO -->
-                    <h1 style='font-family: Helvetica,Arial,sans-serif;font-size: 25px;color: white;margin: 0px;padding: 30px;height: calc(100% - 60px);'>       {$tituloEmail}</h1>
+                    <h1 style='font-family: Helvetica,Arial,sans-serif;font-size: 25px;color: white;margin: 0px;padding: 60px;height: calc(100% - 120px);'>       {$tituloEmail}</h1>
                 </div>
                 <!-- Conteudo -->
-                <div style='height:  100%;font-family: Helvetica,Arial,sans-serif;padding: 60px;color: #004548;'>
+                <div style='font-family: Helvetica,Arial,sans-serif;padding: 75px 70px;color: #004548;'>
                     {$textoEmail}
                 </div>
             </div>
@@ -115,20 +117,20 @@ if(isset($_GET['email'])){
         $textoEmail = "Recebemos a sua solicitação para recuperação da senha, caso você não tenha solicitado Ignore este Email <br>
                         Caso tenha solicitado <a href='{$link}'>Clique Aqui</a> ou cole este link no seu navegador: {$link}";
 
-        $mail->Body    = "<html>
+        $mail->Body = "<html>
         <!-- CORPO -->
         <body style='height: 100%;background-color: rgb(247, 247, 247);'>
             <!-- CONTEUDO INTERNO -->
             <div class='content' style='background-color:white;width: 90%;height: 97%;border-color: rgb(189, 189, 189);border-width: 1px;border-style:  solid;margin: 4%;text-align:center;'>
                 <!-- LOGO -->
-                <img src='{$dominioDoSite}/_assets/img/logo.png' style='margin: 7%;width: 32%;'>
+                <img src='{$dominioDoSite}/_assets/img/logo.png' style='padding: 5%;width: 32%;'>
                 <!-- TITULO -->
-                <div style='background-color: #023326;height: 150px;'>
+                <div style='background-color: #ffc107;height: 150px;'>
                     <!-- H1 TITULO -->
-                    <h1 style='font-family: Helvetica,Arial,sans-serif;font-size: 25px;color: white;margin: 0px;padding: 30px;height: calc(100% - 60px);'>       {$tituloEmail}</h1>
+                    <h1 style='font-family: Helvetica,Arial,sans-serif;font-size: 25px;color: white;margin: 0px;padding: 60px;height: calc(100% - 120px);'>       {$tituloEmail}</h1>
                 </div>
                 <!-- Conteudo -->
-                <div style='height:  100%;font-family: Helvetica,Arial,sans-serif;padding: 60px;color: #004548;'>
+                <div style='font-family: Helvetica,Arial,sans-serif;padding: 75px 70px;color: #004548;'>
                     {$textoEmail}
                 </div>
             </div>
@@ -138,7 +140,7 @@ if(isset($_GET['email'])){
         if(!$mail->send()) {
             echo 'Não foi possível enviar a mensagem.<br>';
             echo 'Erro: ' . $mail->ErrorInfo;
-            header("location: login.php?action=recuperacao&msg=Email com link de Recuperação não enviado!");
+            header("location: login.php?action=recuperacao&msg=<p style='color: red;'>Email com link de Recuperação não enviado!</p>");
         } else {
             header("location: login.php?action=recuperacao&msg=Email com link de Recuperação enviado!");
         }

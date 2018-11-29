@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CMC - Inicio</title>
+    <title>CMC - Projetos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -25,11 +25,9 @@
     <script src="_js/jquery-validator.js"></script>
 </head>
 <body>
+<?php require_once('pages/navbar.php')?>
     <div class="wrapper">
-        <?php require_once('pages/navbar.php')?>
-        <div>
-            <h1>Projetos</h1>
-        </div>
+        <?php header('location: projetos.php'); ?>
     </div>
 </body>
 </html>

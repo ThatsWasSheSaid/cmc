@@ -1,19 +1,22 @@
-<?php require_once("conexao.php");?>
+<?php require_once("conexao.php");
+header('Access-Control-Allow-Origin: *');
+?>
+
 
 <?php 
 // Função de Login
 	session_start();
-
+    //testa se a action for 'login' e se o email e a senha foram passados
     if(isset($_GET["action"]) && $_GET["action"]=='login'){
         if(isset($_POST["email"]) && isset($_POST["senha"])){
 
             $email = $_POST["email"];
             $senha = $_POST["senha"];
             
+            //gera senha criptografada
             $senhaMD5 = md5("754f9968bf5f5f68d7dea029889b7415".$senha);
             
             $login = "SELECT * FROM usuarios WHERE email = '$email' AND senha='$senhaMD5'";
-            
             $acesso = mysqli_query($conn,$login);
 
             if(!$acesso){
@@ -175,7 +178,7 @@
             </div>
         <?php endif;?>
         <!-- !Formulario de Recuperação de Senha -->
-        <!-- Formulario de Recuperação de Senha -->
+        <!-- Formulario de Troca de Senha -->
         <?php
         // Função de troca de senha
             if(isset($_GET["action"]) && $_GET["action"]=='trocaSenha'){
@@ -274,7 +277,7 @@
                 }
             }
         ?>
-        <!-- !Formulario de Recuperação de Senha -->
+        <!-- !Formulario de Troca de Senha -->
     </div>
 </body>
 </html>
