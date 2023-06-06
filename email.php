@@ -16,7 +16,7 @@
 //caso o servidor necessite de usuario/senha
     $autenticar = true;
     $usuario = 'contato@avannt.net';
-    $senha = 'Aezakmi3#';
+    $senha = 'pass#';
 //configurações do Email
     $rementente = 'no-reply@avannt.net';
     $reply = 'no-reply@avannt.net';
